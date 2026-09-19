@@ -1,6 +1,6 @@
 ---
 title: "Chapter 1 · My EDA project"
-author: "Your Name"
+author: "Tim Gielen"
 date: today
 ---
 
@@ -20,6 +20,25 @@ date: today
 > your own content.
 
 ## The question
+What is the most important determinant of Economic growth? 
+
+More guns, less crime?
+
+Create a mean variance portfolio?
+
+What is the moving avergae of the S&P 500?
+
+Or Wbids for loolking into world wide government debt.
+
+Looking at the top 10 performing companies of the S & P 500, does their accounting data (Corporate Fundamentals) have a stronger correlation with their 1-year stock return?
+```{r}
+#Top 10 companies in the S&P 500 index
+top_10_tickers <- c("NVDA", "AAPL", "GOOGL", "MSFT", "AMZN", "META", "AVGO", "TSLA", "BKR.B", "LLY")
+raw_financials <- tidyquant::tq_get(top_10_tickers, get = "financials")
+raw_financials
+```
+
+Or create a portfolio using the Fama-French dataset. 
 
 <!-- TODO: In a sentence or two, what question are you trying to answer with this dataset?  -->
 
@@ -35,6 +54,21 @@ The only portal-specific part is the *fetch*. This template shows two ways;
 use the one that fits your portal:
 
 - **`{rdatagouv}`** (data.gouv.fr only, optional): search/download from R.
+```{r}
+#What is the most important determinant of Economic Growth
+library("AER")
+data("GrowthDJ")
+View(GrowthDJ)
+
+#More guns, less crime?
+data("Guns")
+View(Guns)
+head(Guns)
+```
+<!--Click [here](https://teal-insights.github.io/r-wbids/index.html) to find the description of the `wbids` package.
+
+[Here](https://cran.r-project.org/web/packages/wbids/readme/README.html) you can find more information about the use of this package.--> 
+
 - **Any portal by URL**: `download.file()` works with any portal's direct
   download link.
 
@@ -54,6 +88,7 @@ library(skimr)          # one-line data summary with skim()
 # TODO: replace with the code you wrote in the Session-2 lab.
 # Option A — data.gouv.fr via {rdatagouv}:
 # ds <- get_dataset("my-dataset-slug"); url <- ds$resources$url[1]
+
 # Option B — any portal by direct URL:
 # url <- "https://www.example-portal.org/.../my-data.csv"
 # download.file(url, "data/my-data.csv")
@@ -76,12 +111,14 @@ library(skimr)          # one-line data summary with skim()
 #| fig-cap: "A one-line summary of the dataset."
 # The skim() output gives you type, missingness and distributions at a glance.
 # skim(dat)
+skimr::skim(Guns)
 ```
 
 ```{r}
 #| label: missingness
 #| fig-cap: "Missing values across variables."
 # vis_miss(dat) — where is data missing, and why might that be?
+naniar::vis_miss(Guns)
 ```
 
 ## Cleaning decisions {#sec-cleaning}
@@ -107,6 +144,8 @@ it in the text (e.g. "Fig. 1 shows that …"). If a figure uses randomness
 <!-- TODO: what did you learn? This is your discussion: put your findings and
 the original question back into perspective. Keep it honest: say what you
 found, and what you did NOT find. -->
+
+
 
 ---
 
