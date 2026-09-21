@@ -1,0 +1,6 @@
+[project]
+name = "portfolio-book"
+
+[dependencies]
+tidyverse = "*"
+wbids = "*"

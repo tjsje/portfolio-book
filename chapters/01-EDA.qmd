@@ -18,25 +18,53 @@ date: today
 >
 > Everything between the `TODO` markers below is a template to replace with
 > your own content.
+## Introduction
+In this chapter we will take a look at the World Wide Debt. We will do this by looking at the.
+
+The purpose of this exercise is to do an Exploratory Data Analysis (EDA).
 
 ## The question
-What is the most important determinant of Economic growth? 
+
+What can we say about government debt in relation to a countries GDP/projected growth in GDP? What are the outliers? What is interesting aboutthis outliers?
+
+## Ensuring reproducibility
+To set up a project manifest and a lockfile use:
+```{r}
+uvr::init()
+```
+
+Then pin an R version:
+```{r}
+uvr::r_pin("4.6.1")
+```
+
+Now we add the packages in to the project we want to use:
+```{r}
+uvr::add("tidyverse")
+```
+
+```{r}
+uvr::add("wbids")
+```
+
+
+<!--What is the most important determinant of Economic growth? 
 
 More guns, less crime?
 
-Create a mean variance portfolio?
+ Create a mean variance portfolio? -->
 
-What is the moving avergae of the S&P 500?
+<!-- What is the moving average of the S&P 500?
 
-Or Wbids for loolking into world wide government debt.
+Or Wbids for loolking into world wide government debt. -->
 
-Looking at the top 10 performing companies of the S & P 500, does their accounting data (Corporate Fundamentals) have a stronger correlation with their 1-year stock return?
-```{r}
+<!-- Looking at the top 10 performing companies of the S & P 500, does their accounting data (Corporate Fundamentals) have a stronger correlation with their 1-year stock return? -->
+<!-- ```{r}
 #Top 10 companies in the S&P 500 index
 top_10_tickers <- c("NVDA", "AAPL", "GOOGL", "MSFT", "AMZN", "META", "AVGO", "TSLA", "BKR.B", "LLY")
 raw_financials <- tidyquant::tq_get(top_10_tickers, get = "financials")
 raw_financials
-```
+``` -->
 
 Or create a portfolio using the Fama-French dataset. 
 
@@ -65,6 +93,7 @@ data("Guns")
 View(Guns)
 head(Guns)
 ```
+
 <!--Click [here](https://teal-insights.github.io/r-wbids/index.html) to find the description of the `wbids` package.
 
 [Here](https://cran.r-project.org/web/packages/wbids/readme/README.html) you can find more information about the use of this package.--> 
@@ -151,3 +180,10 @@ found, and what you did NOT find. -->
 
 *This chapter is your semester's centrepiece. Revisit it as you learn new
 techniques and make it your best work by the final gallery walk.*
+
+`uvr::add("tidyverse")`
+
+Ensure reproducibility:
+```{r}
+
+```

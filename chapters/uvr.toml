@@ -1,0 +1,6 @@
+[project]
+name = "chapters"
+
+[dependencies]
+tidyverse = "*"
+wbids = "*"
