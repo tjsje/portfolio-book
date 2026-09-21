@@ -47,6 +47,11 @@ uvr::add("tidyverse")
 uvr::add("wbids")
 ```
 
+Documentation of the `wbids` package can be founf [here](https://teal-insights.github.io/r-wbids/articles/data-model.html).
+
+This package gives access to the world debt statistics published by the world bank.
+
+Anather potentially useful package is the `wbwdi` wich contains World Development Indicators like Gross Domestic Product.
 
 <!--What is the most important determinant of Economic growth? 
 
